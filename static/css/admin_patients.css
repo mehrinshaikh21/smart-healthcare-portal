@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f4f9ff;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:45px 0;
+}
+
+
+/* Header */
+
+.header{
+    background:white;
+
+    padding:25px 30px;
+
+    border-radius:16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#1e3a8a;
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.header p{
+    color:#666;
+    font-size:14px;
+}
+
+.back-btn{
+    text-decoration:none;
+
+    background:#2563eb;
+    color:white;
+
+    padding:11px 22px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#1d4ed8;
+}
+
+
+/* Patients */
+
+.patients{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.patient-card{
+    background:white;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:20px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+
+    transition:0.3s;
+}
+
+.patient-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,0.10);
+}
+
+.patient-icon{
+    width:65px;
+    height:65px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e8f0ff;
+
+    border-radius:50%;
+
+    font-size:32px;
+
+    flex-shrink:0;
+}
+
+.patient-info h2{
+    color:#1e3a8a;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+}
+
+.patient-info p{
+    color:#666;
+
+    font-size:13px;
+
+    margin:5px 0;
+}
+
+
+/* No Patients */
+
+.no-patients{
+    background:white;
+
+    text-align:center;
+
+    padding:70px 30px;
+
+    border-radius:16px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+}
+
+.no-patients .icon{
+    font-size:55px;
+
+    margin-bottom:15px;
+}
+
+.no-patients h2{
+    color:#1e3a8a;
+
+    margin-bottom:8px;
+}
+
+.no-patients p{
+    color:#666;
+}
+
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .header{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+    }
+
+    .patients{
+        grid-template-columns:1fr;
+    }
+
+}

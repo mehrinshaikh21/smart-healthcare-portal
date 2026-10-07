@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Lab Technician</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin_lab_technician.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div>
+
+            <h1>🧪 Laboratory Technician</h1>
+
+            <p>
+                Laboratory staff information
+            </p>
+
+        </div>
+
+        <a href="/admin-dashboard" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    <div class="profile-card">
+
+        <div class="profile-icon">
+            👨‍🔬
+        </div>
+
+        <h2>
+            {{ technician.name }}
+        </h2>
+
+        <span class="role">
+            {{ technician.role }}
+        </span>
+
+
+        <div class="details">
+
+            <div class="detail">
+
+                <span>🎓</span>
+
+                <div>
+                    <small>Qualification</small>
+                    <strong>
+                        {{ technician.qualification }}
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span>🏥</span>
+
+                <div>
+                    <small>Laboratory</small>
+                    <strong>
+                        {{ technician.laboratory }}
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span>📧</span>
+
+                <div>
+                    <small>Email</small>
+                    <strong>
+                        {{ technician.email }}
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="detail">
+
+                <span>🩸</span>
+
+                <div>
+                    <small>Responsibility</small>
+                    <strong>
+                        Blood Test Reports
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="info">
+
+            <h3>🔬 Laboratory Responsibility</h3>
+
+            <p>
+                The laboratory technician reviews blood test
+                requests, performs the required laboratory
+                testing and enters the patient's test report
+                into the Smart Healthcare Portal.
+            </p>
+
+        </div>
+
+
+        <a href="/lab-dashboard" class="lab-btn">
+            🩸 Open Lab Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

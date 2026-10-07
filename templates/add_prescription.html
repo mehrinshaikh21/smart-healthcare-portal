@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Prescription</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/add_prescription.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div>
+
+                <h1>💊 Add Prescription</h1>
+
+                <p>
+                    Add prescription for {{ patient[1] }}
+                </p>
+
+            </div>
+
+            <a href="/patient-medical-history/{{ patient[0] }}"
+               class="back-btn">
+
+                ← Back
+
+            </a>
+
+        </div>
+
+
+        <div class="form-box">
+
+            <div class="patient-name">
+
+                <span>👤</span>
+
+                <div>
+
+                    <strong>Patient</strong>
+
+                    <p>{{ patient[1] }}</p>
+
+                </div>
+
+            </div>
+
+
+            <form
+                action="/add-prescription/{{ patient[0] }}"
+                method="POST"
+            >
+
+                <div id="medicines-container">
+
+
+                    <!-- Medicine 1 -->
+
+                    <div class="medicine-box">
+
+                        <div class="medicine-header">
+
+                            <h2>💊 Medicine 1</h2>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                💊 Medicine Name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="medicine_name[]"
+                                placeholder="Enter medicine name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                🔢 Dosage
+                            </label>
+
+                            <input
+                                type="text"
+                                name="dosage[]"
+                                placeholder="Example: 1 tablet"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                🕐 When to Take
+                            </label>
+
+                            <div class="timing-options">
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="medicine_0_morning"
+                                        value="1"
+                                    >
+
+                                    🌅 Morning
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="medicine_0_afternoon"
+                                        value="1"
+                                    >
+
+                                    ☀️ Afternoon
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="medicine_0_night"
+                                        value="1"
+                                    >
+
+                                    🌙 Night
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                📅 Duration
+                            </label>
+
+                            <input
+                                type="text"
+                                name="duration[]"
+                                placeholder="Example: 5 days"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                📝 Instructions
+                            </label>
+
+                            <textarea
+                                name="instructions[]"
+                                rows="4"
+                                placeholder="Example: Take after food..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="add-medicine-btn"
+                    onclick="addMedicine()"
+                >
+
+                    + Add Another Medicine
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+
+                    💾 Save Prescription
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let medicineCount = 1;
+
+
+        function addMedicine() {
+
+            const index = medicineCount;
+
+            medicineCount++;
+
+            const container =
+                document.getElementById("medicines-container");
+
+
+            const medicineBox =
+                document.createElement("div");
+
+            medicineBox.className = "medicine-box";
+
+
+            medicineBox.innerHTML = `
+
+                <div class="medicine-header">
+
+                    <h2>
+                        💊 Medicine ${medicineCount}
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="remove-medicine-btn"
+                        onclick="removeMedicine(this)"
+                    >
+
+                        ✕ Remove
+
+                    </button>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        💊 Medicine Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="medicine_name[]"
+                        placeholder="Enter medicine name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        🔢 Dosage
+                    </label>
+
+                    <input
+                        type="text"
+                        name="dosage[]"
+                        placeholder="Example: 1 tablet"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        🕐 When to Take
+                    </label>
+
+                    <div class="timing-options">
+
+                        <label class="checkbox-option">
+
+                            <input
+                                type="checkbox"
+                                name="medicine_${index}_morning"
+                                value="1"
+                            >
+
+                            🌅 Morning
+
+                        </label>
+
+
+                        <label class="checkbox-option">
+
+                            <input
+                                type="checkbox"
+                                name="medicine_${index}_afternoon"
+                                value="1"
+                            >
+
+                            ☀️ Afternoon
+
+                        </label>
+
+
+                        <label class="checkbox-option">
+
+                            <input
+                                type="checkbox"
+                                name="medicine_${index}_night"
+                                value="1"
+                            >
+
+                            🌙 Night
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        📅 Duration
+                    </label>
+
+                    <input
+                        type="text"
+                        name="duration[]"
+                        placeholder="Example: 5 days"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        📝 Instructions
+                    </label>
+
+                    <textarea
+                        name="instructions[]"
+                        rows="4"
+                        placeholder="Example: Take after food..."
+                    ></textarea>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(medicineBox);
+
+        }
+
+
+        function removeMedicine(button) {
+
+            const medicineBox =
+                button.closest(".medicine-box");
+
+            medicineBox.remove();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Successful</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/appointment_success.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="success-box">
+
+        <div class="tick">
+            ✅
+        </div>
+
+        <h1>Appointment Booked Successfully!</h1>
+
+        <p>Your appointment has been scheduled successfully.</p>
+
+        <div class="details">
+
+            <p><strong>👤 Patient Name:</strong> {{ patient_name }}</p>
+
+            <p><strong>👨‍⚕️ Doctor:</strong> {{ doctor }}</p>
+
+            <p><strong>🏥 Department:</strong> {{ department }}</p>
+
+            <p><strong>📅 Date:</strong> {{ appointment_date }}</p>
+
+            <p><strong>⏰ Time:</strong> {{ appointment_time }}</p>
+
+            <p><strong>📌 Status:</strong> Pending</p>
+
+        </div>
+
+        <div class="buttons">
+
+            <a href="/patient-dashboard">
+                <button>🏠 Back to Dashboard</button>
+            </a>
+
+            <a href="/book-appointment">
+                <button class="second-btn">📅 Book Another Appointment</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

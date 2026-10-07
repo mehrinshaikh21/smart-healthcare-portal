@@ -1,0 +1,188 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f4f9ff;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:45px 0;
+}
+
+
+/* Header */
+
+.header{
+    background:white;
+
+    padding:25px 30px;
+
+    border-radius:16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#1e3a8a;
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.header p{
+    color:#666;
+    font-size:14px;
+}
+
+.back-btn{
+    text-decoration:none;
+
+    background:#2563eb;
+    color:white;
+
+    padding:11px 22px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#1d4ed8;
+}
+
+
+/* Appointments */
+
+.appointments{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.appointment-card{
+    background:white;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:20px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+
+    transition:0.3s;
+}
+
+.appointment-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,0.10);
+}
+
+.appointment-icon{
+    width:65px;
+    height:65px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e8f0ff;
+
+    border-radius:50%;
+
+    font-size:30px;
+
+    flex-shrink:0;
+}
+
+.appointment-info h2{
+    color:#1e3a8a;
+
+    font-size:19px;
+
+    margin-bottom:10px;
+}
+
+.appointment-info p{
+    color:#666;
+
+    font-size:13px;
+
+    margin:6px 0;
+}
+
+.appointment-info strong{
+    color:#374151;
+}
+
+
+/* No Appointments */
+
+.no-appointments{
+    background:white;
+
+    text-align:center;
+
+    padding:70px 30px;
+
+    border-radius:16px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+}
+
+.no-appointments .icon{
+    font-size:55px;
+
+    margin-bottom:15px;
+}
+
+.no-appointments h2{
+    color:#1e3a8a;
+
+    margin-bottom:8px;
+}
+
+.no-appointments p{
+    color:#666;
+}
+
+
+/* Responsive */
+
+@media(max-width:700px){
+
+    .header{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+    }
+
+    .appointments{
+        grid-template-columns:1fr;
+    }
+
+}

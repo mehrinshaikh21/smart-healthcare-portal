@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Our Doctors - Smart Healthcare Portal</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/doctors.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div>
+
+            <h1>👨‍⚕️ Our Doctors</h1>
+
+            <p>
+                Meet the healthcare professionals of
+                Smart Healthcare Portal
+            </p>
+
+        </div>
+
+        <a href="/" class="back-btn">
+            ← Home
+        </a>
+
+    </div>
+
+
+    {% if doctors %}
+
+    <div class="doctors">
+
+        {% for doctor in doctors %}
+
+        <div class="doctor-card">
+
+            <div class="doctor-icon">
+                👨‍⚕️
+            </div>
+
+            <h2>
+                {{ doctor[0] }}
+            </h2>
+
+            <p>
+                <strong>Specialization</strong>
+            </p>
+
+            <p class="specialization">
+                {{ doctor[1] }}
+            </p>
+
+            <a href="/login" class="appointment-btn">
+                📅 Book Appointment
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="empty">
+
+        <div class="empty-icon">
+            👨‍⚕️
+        </div>
+
+        <h2>
+            No Doctors Available
+        </h2>
+
+        <p>
+            Doctor information will appear here once doctors
+            are registered in the portal.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>

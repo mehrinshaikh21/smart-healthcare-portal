@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doctor Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/doctor_login.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="login-box">
+
+            <h1>👨‍⚕️ Doctor Login</h1>
+
+            <p>Login to access your doctor dashboard</p>
+
+            <form action="/doctor-login" method="POST">
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    required>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter Password"
+                    required>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <a class="back" href="/login">
+                ← Back
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

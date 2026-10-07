@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Medical Records</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/patient_medical_records.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+
+            <h1>🏥 My Medical Records</h1>
+
+            <p>
+                View your medical history and health information
+            </p>
+
+        </div>
+
+        <a href="/patient-dashboard" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    {% if records %}
+
+    <div class="records">
+
+        {% for record in records %}
+
+        <div class="record-card">
+
+            <!-- Record Header -->
+
+            <div class="record-header">
+
+                <div class="record-icon">
+                    🩺
+                </div>
+
+                <div>
+
+                    <h2>
+                        Medical Record
+                    </h2>
+
+                    <p>
+                        📅 {{ record[1] }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Health Information -->
+
+            <div class="health-grid">
+
+                <div class="health-box">
+
+                    <span>💓</span>
+
+                    <div>
+                        <small>Blood Pressure</small>
+
+                        <strong>
+                            {{ record[2] or 'Not Available' }}
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="health-box">
+
+                    <span>🩸</span>
+
+                    <div>
+                        <small>Blood Sugar</small>
+
+                        <strong>
+                            {{ record[3] or 'Not Available' }}
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Medical Details -->
+
+            <div class="section">
+
+                <h3>🤒 Symptoms</h3>
+
+                <p>
+                    {{ record[4] or 'Not Available' }}
+                </p>
+
+            </div>
+
+
+            <div class="section">
+
+                <h3>🔍 Diagnosis</h3>
+
+                <p>
+                    {{ record[5] or 'Not Available' }}
+                </p>
+
+            </div>
+
+
+            <div class="section">
+
+                <h3>💊 Treatment</h3>
+
+                <p>
+                    {{ record[6] or 'Not Available' }}
+                </p>
+
+            </div>
+
+
+            <!-- Doctor -->
+
+            <div class="doctor">
+
+                <h3>👨‍⚕️ Doctor</h3>
+
+                <p>
+                    {{ record[7] or 'Not Available' }}
+                </p>
+
+            </div>
+
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    {% else %}
+
+    <!-- Empty -->
+
+    <div class="empty">
+
+        <div class="empty-icon">
+            🏥
+        </div>
+
+        <h2>
+            No Medical Records
+        </h2>
+
+        <p>
+            Your medical history will appear here
+            when a doctor adds a medical record.
+        </p>
+
+        <a href="/patient-dashboard" class="book-btn">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>

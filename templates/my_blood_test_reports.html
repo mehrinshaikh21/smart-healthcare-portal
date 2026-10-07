@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Blood Test Reports</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/my_blood_test_reports.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+
+            <h1>🧪 My Blood Test Reports</h1>
+
+            <p>
+                View your completed blood test reports
+            </p>
+
+        </div>
+
+        <a href="/patient-dashboard" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    {% if reports %}
+
+        <div class="reports">
+
+            {% for report in reports %}
+
+            <div class="report-card">
+
+                <!-- Report Header -->
+
+                <div class="report-header">
+
+                    <div class="report-icon">
+                        🩸
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            {{ report[1] }}
+                        </h2>
+
+                        <p>
+                            Status:
+                            <span class="completed">
+                                {{ report[12] }}
+                            </span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Test Information -->
+
+                <div class="section">
+
+                    <h3>📋 Test Information</h3>
+
+                    <p>
+                        📅 <strong>Date:</strong>
+                        {{ report[3] }}
+                    </p>
+
+                    <p>
+                        🕐 <strong>Time:</strong>
+                        {{ report[4] }}
+                    </p>
+
+                    <p>
+                        🏠 <strong>Collection:</strong>
+                        {{ report[2] }}
+                    </p>
+
+                    <p>
+                        📍 <strong>Address:</strong>
+                        {{ report[5] }}
+                    </p>
+
+                </div>
+
+
+                <!-- Test Result -->
+
+                <div class="result-section">
+
+                    <h3>🧪 Test Result</h3>
+
+                    <div class="result-box">
+                        {{ report[6] }}
+                    </div>
+
+                </div>
+
+
+                <!-- Normal Range -->
+
+                <div class="result-section">
+
+                    <h3>📊 Reference / Normal Range</h3>
+
+                    <div class="range-box">
+                        {{ report[7] }}
+                    </div>
+
+                </div>
+
+
+                <!-- Impression -->
+
+                <div class="result-section">
+
+                    <h3>📝 Impression / Remarks</h3>
+
+                    <div class="remarks-box">
+                        {{ report[8] }}
+                    </div>
+
+                </div>
+
+
+                <!-- Laboratory Information -->
+
+                <div class="lab-section">
+
+                    <h3>👨‍🔬 Laboratory Information</h3>
+
+                    <p>
+                        <strong>Technician:</strong>
+                        {{ report[9] }}
+                    </p>
+
+                    <p>
+                        <strong>Qualification:</strong>
+                        {{ report[10] }}
+                    </p>
+
+                    <p>
+                        <strong>Laboratory:</strong>
+                        {{ report[11] }}
+                    </p>
+
+                </div>
+
+
+                <!-- Report Actions -->
+
+                <div class="report-actions">
+
+                    <a href="/blood-test-report/{{ report[0] }}"
+                       class="view-report-btn">
+                        📄 View Full Report
+                    </a>
+
+                </div>
+
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+    {% else %}
+
+        <!-- No Reports -->
+
+        <div class="empty">
+
+            <div class="empty-icon">
+                🧪
+            </div>
+
+            <h2>
+                No Blood Test Reports
+            </h2>
+
+            <p>
+                Your completed blood test reports will appear here.
+            </p>
+
+            <a href="/blood-test" class="book-btn">
+                🩸 Book Blood Test
+            </a>
+
+        </div>
+
+    {% endif %}
+
+
+</div>
+
+</body>
+
+</html>

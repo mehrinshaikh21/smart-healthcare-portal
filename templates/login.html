@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Select Login | HealthCare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="login-box">
+
+            <h1>Welcome Back 👋</h1>
+
+            <p>Select how you want to continue</p>
+
+
+            <!-- Patient -->
+
+            <div class="card">
+
+                <h2>👤 Patient</h2>
+
+                <p>
+                    Book and manage appointments
+                </p>
+
+                <a href="/patient-login">
+                    Continue
+                </a>
+
+            </div>
+
+
+            <!-- Doctor -->
+
+            <div class="card">
+
+                <h2>👨‍⚕️ Doctor</h2>
+
+                <p>
+                    View patient appointments
+                </p>
+
+                <a href="/doctor-login">
+                    Continue
+                </a>
+
+            </div>
+
+
+            <!-- Admin -->
+
+            <div class="card">
+
+                <h2>👩‍💼 Admin</h2>
+
+                <p>
+                    Manage hospital system
+                </p>
+
+                <a href="/admin-login">
+                    Continue
+                </a>
+
+            </div>
+
+
+            <!-- Lab Technician -->
+
+            <div class="card">
+
+                <h2>🧪 Lab Technician</h2>
+
+                <p>
+                    Manage blood tests and reports
+                </p>
+
+                <a href="/lab-login">
+                    Continue
+                </a>
+
+            </div>
+
+
+            <div class="back">
+
+                <a href="/">
+                    ← Back to Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

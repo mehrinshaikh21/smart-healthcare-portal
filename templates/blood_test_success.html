@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Test Request Confirmed</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:#f4f9ff;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .success-box{
+            width:90%;
+            max-width:650px;
+
+            background:white;
+
+            padding:45px 35px;
+
+            border-radius:18px;
+
+            text-align:center;
+
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .success-icon{
+            font-size:65px;
+
+            margin-bottom:15px;
+        }
+
+        h1{
+            color:#1e3a8a;
+
+            margin-bottom:10px;
+        }
+
+        .message{
+            color:#666;
+
+            margin-bottom:30px;
+        }
+
+        .details{
+            background:#f4f8ff;
+
+            padding:20px;
+
+            border-radius:12px;
+
+            text-align:left;
+
+            margin-bottom:30px;
+        }
+
+        .details p{
+            color:#555;
+
+            margin:8px 0;
+        }
+
+        .details strong{
+            color:#1e3a8a;
+        }
+
+        .dashboard-btn{
+            display:inline-block;
+
+            text-decoration:none;
+
+            background:#2563eb;
+
+            color:white;
+
+            padding:12px 24px;
+
+            border-radius:8px;
+
+            transition:0.3s;
+        }
+
+        .dashboard-btn:hover{
+            background:#1d4ed8;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="success-box">
+
+        <div class="success-icon">
+            🩸
+        </div>
+
+        <h1>
+            Blood Test Request Submitted!
+        </h1>
+
+        <p class="message">
+            Your blood test request has been successfully submitted.
+        </p>
+
+
+        <div class="details">
+
+            <p>
+                <strong>Test:</strong>
+                {{ test_name }}
+            </p>
+
+            <p>
+                <strong>Collection:</strong>
+                {{ collection_type }}
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                {{ appointment_date }}
+            </p>
+
+            <p>
+                <strong>Time:</strong>
+                {{ appointment_time }}
+            </p>
+
+        </div>
+
+
+        <a href="/patient-dashboard" class="dashboard-btn">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+
+</html>

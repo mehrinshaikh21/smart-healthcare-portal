@@ -1,0 +1,303 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f4f9ff;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding:45px 0;
+}
+
+/* Header */
+
+.header{
+    background:white;
+    padding:25px 30px;
+    border-radius:16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom:25px;
+}
+
+.header h1{
+    color:#1e3a8a;
+    font-size:30px;
+    margin-bottom:6px;
+}
+
+.header p{
+    color:#666;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+
+    padding:11px 22px;
+    border-radius:8px;
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#1d4ed8;
+}
+
+
+/* Form Box */
+
+.form-box{
+    background:white;
+    padding:30px;
+
+    border-radius:16px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+}
+
+
+/* Patient Name */
+
+.patient-name{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    background:#f4f8ff;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    margin-bottom:25px;
+}
+
+.patient-name span{
+    font-size:30px;
+}
+
+.patient-name strong{
+    color:#1e3a8a;
+}
+
+.patient-name p{
+    color:#666;
+    margin-top:3px;
+}
+
+
+/* Form */
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group > label{
+    display:block;
+
+    color:#1e3a8a;
+
+    font-weight:500;
+
+    margin-bottom:8px;
+}
+
+.form-group input[type="text"],
+.form-group textarea{
+    width:100%;
+
+    padding:12px 14px;
+
+    border:1px solid #dbe3ef;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus{
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,0.1);
+}
+
+.form-group textarea{
+    resize:vertical;
+}
+
+
+/* Timing Options */
+
+.timing-options{
+    display:flex;
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.checkbox-option{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    background:#f4f8ff;
+
+    border:1px solid #dbe3ef;
+
+    padding:12px 18px;
+
+    border-radius:8px;
+
+    color:#555;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.checkbox-option:hover{
+    border-color:#2563eb;
+    color:#2563eb;
+}
+
+.checkbox-option input{
+    width:16px;
+    height:16px;
+
+    cursor:pointer;
+}
+
+
+/* Save Button */
+
+.save-btn{
+    width:100%;
+
+    padding:13px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.save-btn:hover{
+    background:#1d4ed8;
+}
+
+
+/* Responsive */
+
+@media(max-width:600px){
+
+    .header{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+    }
+
+    .timing-options{
+        flex-direction:column;
+    }
+
+    .checkbox-option{
+        width:100%;
+    }
+
+}
+/* Add Another Medicine Button */
+
+.add-medicine-btn{
+    width:100%;
+    padding:14px 20px;
+
+    background:#eef4ff;
+    color:#2563eb;
+
+    border:2px dashed #2563eb;
+    border-radius:10px;
+
+    font-family:'Poppins',sans-serif;
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+
+    margin-top:10px;
+    margin-bottom:18px;
+}
+
+.add-medicine-btn:hover{
+    background:#2563eb;
+    color:white;
+
+    border-style:solid;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 15px rgba(37,99,235,0.20);
+}
+
+
+/* Remove Medicine Button */
+
+.remove-medicine-btn{
+    border:none;
+
+    background:#fee2e2;
+    color:#dc2626;
+
+    padding:7px 13px;
+
+    border-radius:7px;
+
+    font-family:'Poppins',sans-serif;
+    font-size:12px;
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.remove-medicine-btn:hover{
+    background:#dc2626;
+    color:white;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/patient_dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <h1>🏥 Patient Dashboard</h1>
+
+    <p>Welcome to Smart Healthcare Portal 👋</p>
+
+    <div class="cards">
+
+
+        <!-- Book Appointment -->
+
+        <div class="card">
+
+            <h2>📅 Book Appointment</h2>
+
+            <p>
+                Schedule a new appointment with a doctor.
+            </p>
+
+            <a href="/book-appointment">
+                <button type="button">
+                    Book Now
+                </button>
+            </a>
+
+        </div>
+
+
+        <!-- My Appointments -->
+
+        <div class="card">
+
+            <h2>📋 My Appointments</h2>
+
+            <p>
+                View all your booked appointments.
+            </p>
+
+            <a href="/my-appointments">
+                <button type="button">
+                    View
+                </button>
+            </a>
+
+        </div>
+
+
+        <!-- My Profile -->
+
+        <div class="card">
+
+            <h2>👤 My Profile</h2>
+
+            <p>
+                View your personal information.
+            </p>
+
+            <a href="/my-profile">
+                <button type="button">
+                    Profile
+                </button>
+            </a>
+
+        </div>
+
+
+        <!-- Blood Test -->
+
+        <div class="card">
+
+            <h2>🩸 Blood Test</h2>
+
+            <p>
+                Book a blood test and get sample collection at home.
+            </p>
+
+            <a href="/blood-test">
+                <button type="button">
+                    Book Blood Test
+                </button>
+            </a>
+
+        </div>
+
+
+        <!-- My Blood Test Reports -->
+
+        <div class="card">
+
+            <h2>🧪 My Blood Test Reports</h2>
+
+            <p>
+                View your completed blood test reports.
+            </p>
+
+            <a href="/my-blood-test-reports">
+                <button type="button">
+                    View Reports
+                </button>
+            </a>
+
+        </div>
+
+        <!-- Medical Records -->
+
+            <div class="card">
+
+                <h2>🏥 Medical Records</h2>
+
+                     <p>
+                        View your medical history, diagnosis,
+                        treatment and health information.
+                    </p>
+
+                       <a href="/patient-medical-records">
+                            <button type="button">
+                                 View Records
+                            </button>
+                        </a>
+
+            </div>
+
+
+        <!-- My Prescriptions -->
+
+        <div class="card">
+
+            <h2>💊 My Prescriptions</h2>
+
+            <p>
+                View medicines prescribed by your doctor.
+            </p>
+
+            <a href="/my-prescriptions">
+                <button type="button">
+                    View Prescriptions
+                </button>
+            </a>
+
+        </div>
+
+
+        <!-- Logout -->
+
+        <div class="card">
+
+            <h2>🚪 Logout</h2>
+
+            <p>
+                Logout from your account.
+            </p>
+
+            <a href="/logout">
+                <button type="button">
+                    Logout
+                </button>
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

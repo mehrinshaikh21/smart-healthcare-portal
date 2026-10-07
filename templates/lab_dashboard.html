@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab Technician Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/lab_dashboard.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>🧪 Lab Technician Dashboard</h1>
+
+                <p>
+                    Healthcare Clinical Laboratory
+                </p>
+
+            </div>
+
+            <a href="/lab-logout" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </div>
+
+
+        <!-- Technician Information -->
+
+        <div class="lab-info">
+
+            <div class="lab-icon">
+                👨‍🔬
+            </div>
+
+            <div>
+
+                <h2>Nayeem Shaikh</h2>
+
+                <p>
+                    Laboratory Technician
+                </p>
+
+                <p>
+                    🎓 B.Sc. Chem., C.M.L.T., D.M.L.T.
+                </p>
+
+                <p>
+                    🏥 Healthcare Clinical Laboratory
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Requests Heading -->
+
+        <div class="section-title">
+
+            <h2>🩸 Blood Test Requests</h2>
+
+            <p>
+                Review patient requests and manage blood test reports.
+            </p>
+
+        </div>
+
+
+        <!-- Requests -->
+
+        {% if requests %}
+
+        <div class="requests">
+
+            {% for item in requests %}
+
+            <div class="request-card">
+
+                <!-- Request Header -->
+
+                <div class="request-header">
+
+                    <div class="blood-icon">
+                        🩸
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            {{ item[2] }}
+                        </h3>
+
+                        <p>
+                            Patient:
+                            <strong>{{ item[1] }}</strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Request Details -->
+
+                <div class="details">
+
+                    <p>
+                        📅 <strong>Date:</strong>
+                        {{ item[4] }}
+                    </p>
+
+                    <p>
+                        🕐 <strong>Time:</strong>
+                        {{ item[5] }}
+                    </p>
+
+                    <p>
+                        🏠 <strong>Collection:</strong>
+                        {{ item[3] }}
+                    </p>
+
+                    <p>
+                        📍 <strong>Address:</strong>
+                        {{ item[6] }}
+                    </p>
+
+                    <p>
+                        📌 <strong>Status:</strong>
+                        {{ item[7] }}
+                    </p>
+
+                </div>
+
+
+                <!-- Report Button -->
+
+               
+                <a href="{{ url_for('lab_report', request_id=item[0]) }}"
+                    class="report-btn">
+                    📝 Enter Test Report
+                </a>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% else %}
+
+        <!-- Empty State -->
+
+        <div class="empty">
+
+            <div class="empty-icon">
+                🩸
+            </div>
+
+            <h2>
+                No Blood Test Requests
+            </h2>
+
+            <p>
+                There are currently no blood test requests.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</body>
+
+</html>

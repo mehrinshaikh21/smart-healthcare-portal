@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/book_appointment.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="appointment-box">
+
+        <h1>🏥 Book Appointment</h1>
+
+        <p>Fill the details below to book your appointment.</p>
+
+        <form action="/book-appointment" method="POST">
+
+            <input
+                type="text"
+                name="patient_name"
+                placeholder="Patient Name"
+                required>
+
+            <select name="doctor" required>
+                <option value="">Select Doctor</option>
+                <option>Dr. Amit Sharma</option>
+                <option>Dr. Priya Patil</option>
+                <option>Dr. Rahul Mehta</option>
+                <option>Dr. Neha Khan</option>
+            </select>
+
+            <select name="department" required>
+                <option value="">Select Department</option>
+                <option>General Medicine</option>
+                <option>Cardiology</option>
+                <option>Orthopedics</option>
+                <option>Dermatology</option>
+                <option>Pediatrics</option>
+            </select>
+
+            <input
+                type="date"
+                name="appointment_date"
+                required>
+
+            <input
+                type="time"
+                name="appointment_time"
+                required>
+
+            <textarea
+                name="reason"
+                rows="4"
+                placeholder="Reason for Appointment"
+                required></textarea>
+
+            <button type="submit">
+                Book Appointment
+            </button>
+
+        </form>
+
+        <div class="back">
+            <a href="/patient-dashboard">← Back to Dashboard</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

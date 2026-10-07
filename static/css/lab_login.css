@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f4f9ff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+    padding:20px;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    text-align:center;
+}
+
+.icon{
+    width:75px;
+    height:75px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e8f0ff;
+
+    border-radius:50%;
+
+    font-size:35px;
+}
+
+.login-box h1{
+    color:#1e3a8a;
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#777;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.form-group{
+    text-align:left;
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+
+    color:#1e3a8a;
+
+    font-size:14px;
+    font-weight:500;
+
+    margin-bottom:7px;
+}
+
+.form-group input{
+    width:100%;
+
+    padding:13px 15px;
+
+    border:1px solid #dbe3ef;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:14px;
+}
+
+.form-group input:focus{
+    border-color:#2563eb;
+}
+
+button{
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.back-link{
+    display:inline-block;
+
+    margin-top:22px;
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    font-size:14px;
+}

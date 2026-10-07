@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/my_profile.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="profile-box">
+
+        <h1>👤 My Profile</h1>
+
+        <p>Your personal information</p>
+
+        <div class="profile-details">
+
+            <div class="row">
+                <label>Full Name</label>
+                <span>{{ patient[1] }}</span>
+            </div>
+
+            <div class="row">
+                <label>Email</label>
+                <span>{{ patient[2] }}</span>
+            </div>
+
+            <div class="row">
+                <label>Mobile</label>
+                <span>{{ patient[3] }}</span>
+            </div>
+
+            <div class="row">
+                <label>Date of Birth</label>
+                <span>{{ patient[4] }}</span>
+            </div>
+
+            <div class="row">
+                <label>Gender</label>
+                <span>{{ patient[5] }}</span>
+            </div>
+
+            <div class="row">
+                <label>Address</label>
+                <span>{{ patient[6] }}</span>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <a href="/edit-profile">
+    <button type="button">Edit Profile</button>
+            </a>
+
+            <a href="/patient-dashboard">
+                <button type="button">Back</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

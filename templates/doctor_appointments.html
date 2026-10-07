@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Today's Appointments</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/doctor_appointments.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+                <h1>📅 Today's Appointments</h1>
+
+                <p>
+                    Dr. {{ doctor_name }}
+                </p>
+            </div>
+
+            <a href="/doctor-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Appointments -->
+
+        {% if appointments %}
+
+            <div class="appointments">
+
+                {% for appointment in appointments %}
+
+                    <div class="appointment-card">
+
+                        <div class="appointment-header">
+
+                            <h2>👤 {{ appointment[1] }}</h2>
+
+                            <span>
+                                {{ appointment[5] }}
+                            </span>
+
+                        </div>
+
+                        <div class="details">
+
+                            <p>
+                                <strong>Doctor:</strong>
+                                {{ appointment[2] }}
+                            </p>
+
+                            <p>
+                                <strong>Department:</strong>
+                                {{ appointment[3] }}
+                            </p>
+
+                            <p>
+                                <strong>Date:</strong>
+                                {{ appointment[4] }}
+                            </p>
+
+                            <p>
+                                <strong>Reason:</strong>
+                                {{ appointment[6] }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="no-appointments">
+
+                <div class="icon">
+                    📅
+                </div>
+
+                <h2>No Appointments Today</h2>
+
+                <p>
+                    You don't have any appointments scheduled for today.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

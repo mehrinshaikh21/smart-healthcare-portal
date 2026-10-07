@@ -1,0 +1,254 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f4f9ff;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+    padding:35px 0;
+}
+
+.header{
+    background:white;
+    padding:25px 30px;
+    border-radius:16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom:22px;
+}
+
+.header h1{
+    color:#1e3a8a;
+    font-size:27px;
+}
+
+.header p{
+    color:#777;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.logout-btn{
+    text-decoration:none;
+    background:#dc2626;
+    color:white;
+
+    padding:11px 20px;
+
+    border-radius:8px;
+
+    font-size:14px;
+}
+
+.lab-info{
+    background:white;
+    padding:25px 30px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+
+    margin-bottom:25px;
+}
+
+.lab-icon{
+    width:70px;
+    height:70px;
+
+    background:#e8f0ff;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+}
+
+.lab-info h2{
+    color:#1e3a8a;
+    margin-bottom:4px;
+}
+
+.lab-info p{
+    color:#666;
+    font-size:13px;
+    margin-top:3px;
+}
+
+.section-title{
+    margin-bottom:18px;
+}
+
+.section-title h2{
+    color:#1e3a8a;
+    font-size:22px;
+}
+
+.section-title p{
+    color:#777;
+    font-size:13px;
+    margin-top:4px;
+}
+
+.requests{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.request-card{
+    background:white;
+    padding:25px;
+
+    border-radius:16px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+
+    transition:0.3s;
+}
+
+.request-card:hover{
+    transform:translateY(-4px);
+}
+
+.request-header{
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:18px;
+}
+
+.blood-icon{
+    width:55px;
+    height:55px;
+
+    background:#fee2e2;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:27px;
+}
+
+.request-header h3{
+    color:#1e3a8a;
+    font-size:18px;
+}
+
+.request-header p{
+    color:#666;
+    font-size:13px;
+    margin-top:4px;
+}
+
+.details{
+    border-top:1px solid #eee;
+
+    padding-top:12px;
+}
+
+.details p{
+    color:#555;
+
+    font-size:13px;
+
+    margin:8px 0;
+}
+
+.report-btn{
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:11px;
+
+    border-radius:8px;
+
+    margin-top:18px;
+
+    font-size:13px;
+}
+
+.report-btn:hover{
+    background:#1d4ed8;
+}
+
+.empty{
+    background:white;
+
+    padding:65px 30px;
+
+    text-align:center;
+
+    border-radius:16px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+}
+
+.empty-icon{
+    font-size:55px;
+
+    margin-bottom:15px;
+}
+
+.empty h2{
+    color:#1e3a8a;
+
+    margin-bottom:7px;
+}
+
+.empty p{
+    color:#777;
+
+    font-size:14px;
+}
+
+@media(max-width:750px){
+
+    .header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .requests{
+        grid-template-columns:1fr;
+    }
+
+    .lab-info{
+        align-items:flex-start;
+    }
+
+}

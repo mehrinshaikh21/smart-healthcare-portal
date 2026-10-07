@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Prescriptions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/my_prescriptions.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div>
+
+                <h1>💊 My Prescriptions</h1>
+
+                <p>
+                    Medicines prescribed by your doctor
+                </p>
+
+            </div>
+
+            <a href="/patient-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        {% if prescriptions %}
+
+            <div class="prescriptions">
+
+                {% for prescription in prescriptions %}
+
+                    <div class="prescription-card">
+
+                        <h2>
+                            💊 {{ prescription[1] }}
+                        </h2>
+
+                        <p class="dosage">
+                            Dosage: {{ prescription[2] }}
+                        </p>
+
+
+                        <div class="timing">
+
+                            {% if prescription[3] %}
+                                <span>🌅 Morning</span>
+                            {% endif %}
+
+                            {% if prescription[4] %}
+                                <span>☀️ Afternoon</span>
+                            {% endif %}
+
+                            {% if prescription[5] %}
+                                <span>🌙 Night</span>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="details">
+
+                            <div class="detail-box">
+
+                                <strong>📅 Duration</strong>
+
+                                <p>
+                                    {{ prescription[6] or 'Not specified' }}
+                                </p>
+
+                            </div>
+
+
+                            <div class="detail-box">
+
+                                <strong>📝 Instructions</strong>
+
+                                <p>
+                                    {{ prescription[7] or 'No instructions' }}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="no-prescriptions">
+
+                <div class="icon">
+                    💊
+                </div>
+
+                <h2>No Prescriptions</h2>
+
+                <p>
+                    Your doctor has not prescribed any medicines yet.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

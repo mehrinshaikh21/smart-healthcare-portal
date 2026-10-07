@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f4f9ff;
+}
+
+.container{
+    width:90%;
+    max-width:850px;
+    margin:auto;
+    padding:45px 0;
+}
+
+
+/* Header */
+
+.header{
+    background:white;
+
+    padding:25px 30px;
+
+    border-radius:16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom:25px;
+}
+
+.header h1{
+    color:#1e3a8a;
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.header p{
+    color:#666;
+    font-size:14px;
+}
+
+.back-btn{
+    text-decoration:none;
+
+    background:#2563eb;
+    color:white;
+
+    padding:11px 22px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#1d4ed8;
+}
+
+
+/* Form */
+
+.form-box{
+    background:white;
+
+    padding:35px;
+
+    border-radius:16px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+
+    color:#1e3a8a;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    margin-bottom:8px;
+}
+
+.form-group input{
+    width:100%;
+
+    padding:13px 15px;
+
+    border:1px solid #dbe3ef;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:14px;
+
+    transition:0.3s;
+}
+
+.form-group input:focus{
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,0.10);
+}
+
+
+/* Buttons */
+
+.form-actions{
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:30px;
+}
+
+.cancel-btn{
+    text-decoration:none;
+
+    background:#e5e7eb;
+
+    color:#374151;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    transition:0.3s;
+}
+
+.cancel-btn:hover{
+    background:#d1d5db;
+}
+
+.save-btn{
+    border:none;
+
+    background:#16a34a;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.save-btn:hover{
+    background:#15803d;
+}
+
+
+/* Responsive */
+
+@media(max-width:600px){
+
+    .header{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+    }
+
+    .form-actions{
+        flex-direction:column;
+    }
+
+    .cancel-btn,
+    .save-btn{
+        width:100%;
+        text-align:center;
+    }
+
+}

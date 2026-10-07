@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Medical Record</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/add_medical_record.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div>
+
+                <h1>➕ Add Medical Record</h1>
+
+                <p>
+                    Add a new medical record for {{ patient[1] }}
+                </p>
+
+            </div>
+
+            <a href="/patient-medical-history/{{ patient[0] }}" class="back-btn">
+                ← Back
+            </a>
+
+        </div>
+
+
+        <div class="form-box">
+
+            <div class="patient-name">
+
+                <span>👤</span>
+
+                <div>
+                    <strong>Patient</strong>
+                    <p>{{ patient[1] }}</p>
+                </div>
+
+            </div>
+
+
+            <form
+                action="/add-medical-record/{{ patient[0] }}"
+                method="POST"
+            >
+
+                <div class="form-group">
+
+                    <label for="checkup_date">
+                        📅 Check-up Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="checkup_date"
+                        name="checkup_date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="blood_pressure">
+                        🩺 Blood Pressure
+                    </label>
+
+                    <input
+                        type="text"
+                        id="blood_pressure"
+                        name="blood_pressure"
+                        placeholder="Example: 120/80"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="blood_sugar">
+                        🩸 Blood Sugar
+                    </label>
+
+                    <input
+                        type="text"
+                        id="blood_sugar"
+                        name="blood_sugar"
+                        placeholder="Example: 95 mg/dL"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="weight">
+                        ⚖️ Weight
+                    </label>
+
+                    <input
+                        type="text"
+                        id="weight"
+                        name="weight"
+                        placeholder="Example: 60 kg"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="doctor_notes">
+                        📝 Doctor Notes
+                    </label>
+
+                    <textarea
+                        id="doctor_notes"
+                        name="doctor_notes"
+                        rows="5"
+                        placeholder="Enter observations, advice or notes..."
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="save-btn">
+                    💾 Save Medical Record
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_profile.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="profile-box">
+
+        <h1>✏️ Edit My Profile</h1>
+
+        <p>Update your personal information</p>
+
+        <form method="POST" action="/edit-profile">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="full_name" value="{{ patient[1] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" value="{{ patient[2] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile</label>
+                <input type="text" name="mobile" value="{{ patient[3] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" name="dob" value="{{ patient[4] }}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+
+                <select name="gender" required>
+                    <option value="Male" {% if patient[5] == 'Male' %}selected{% endif %}>Male</option>
+                    <option value="Female" {% if patient[5] == 'Female' %}selected{% endif %}>Female</option>
+                    <option value="Other" {% if patient[5] == 'Other' %}selected{% endif %}>Other</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <textarea name="address" rows="4" required>{{ patient[6] }}</textarea>
+            </div>
+
+            <div class="buttons">
+
+                <button type="submit" class="save-btn">
+                    Save Changes
+                </button>
+
+                <a href="/my-profile" class="back-btn">
+                    Cancel
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

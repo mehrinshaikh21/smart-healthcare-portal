@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin_dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+
+            <h1>👨‍💼 Admin Dashboard</h1>
+
+            <p>
+                Smart Healthcare Portal Administration
+            </p>
+
+        </div>
+
+        <div class="header-actions">
+
+            <a href="/logout" class="back-btn">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Dashboard Cards -->
+
+    <div class="cards">
+
+
+        <!-- Doctors -->
+
+        <div class="card">
+
+            <div class="icon">
+                👨‍⚕️
+            </div>
+
+            <h2>Manage Doctors</h2>
+
+            <p>
+                Add, view and manage doctors registered
+                in the healthcare portal.
+            </p>
+
+            <a href="/admin-doctors" class="card-btn">
+                View Doctors
+            </a>
+
+        </div>
+
+
+        <!-- Patients -->
+
+        <div class="card">
+
+            <div class="icon">
+                👥
+            </div>
+
+            <h2>Manage Patients</h2>
+
+            <p>
+                View and manage registered patients.
+            </p>
+
+            <a href="/admin-patients" class="card-btn">
+                View Patients
+            </a>
+
+        </div>
+
+
+        <!-- Appointments -->
+
+        <div class="card">
+
+            <div class="icon">
+                📅
+            </div>
+
+            <h2>Appointments</h2>
+
+            <p>
+                View and monitor patient appointments.
+            </p>
+
+            <a href="/admin-appointments" class="card-btn">
+                View Appointments
+            </a>
+
+        </div>
+
+
+        <!-- Blood Tests -->
+
+        <div class="card">
+
+            <div class="icon">
+                🩸
+            </div>
+
+            <h2>Blood Test Requests</h2>
+
+            <p>
+                Monitor blood test and home sample
+                collection requests.
+            </p>
+
+            <a href="/admin-blood-tests" class="card-btn">
+                View Requests
+            </a>
+
+        </div>
+
+
+        <!-- Lab Technician -->
+
+        <div class="card">
+
+            <div class="icon">
+                🧪
+            </div>
+
+            <h2>Lab Technician</h2>
+
+            <p>
+                View laboratory technician information
+                and assigned blood test responsibilities.
+            </p>
+
+            <a href="/admin-lab-technician" class="card-btn">
+                View Technician
+            </a>
+
+        </div>
+
+
+        <!-- Medical Records -->
+
+        <div class="card">
+
+            <div class="icon">
+                📋
+            </div>
+
+            <h2>Medical Records</h2>
+
+            <p>
+                Monitor patient medical records
+                and prescriptions.
+            </p>
+
+            <a href="/admin-medical-records" class="card-btn">
+                View Records
+            </a>
+
+        </div>
+
+
+        <!-- System Overview -->
+
+        <div class="card">
+
+            <div class="icon">
+                📊
+            </div>
+
+            <h2>System Overview</h2>
+
+            <p>
+                View overall information about
+                the healthcare portal.
+            </p>
+
+            <a href="/admin-overview" class="card-btn">
+                View Overview
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

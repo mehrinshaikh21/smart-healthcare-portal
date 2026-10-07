@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Test Home Service</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/blood_test.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>🩸 Blood Test Home Service</h1>
+
+                <p>
+                    Book a blood test and get sample collection at home.
+                </p>
+
+            </div>
+
+            <a href="/patient-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Form -->
+
+        <div class="form-box">
+
+            <form action="/blood-test" method="POST">
+
+
+                <div class="form-group">
+
+                    <label for="test_name">
+                        🧪 Select Blood Test
+                    </label>
+
+                    <select
+                        id="test_name"
+                        name="test_name"
+                        required
+                    >
+
+                        <option value="">
+                            Select Test
+                        </option>
+
+                        <option value="Complete Blood Count (CBC)">
+                            Complete Blood Count (CBC)
+                        </option>
+
+                        <option value="Blood Sugar Test">
+                            Blood Sugar Test
+                        </option>
+
+                        <option value="Lipid Profile">
+                            Lipid Profile
+                        </option>
+
+                        <option value="Liver Function Test">
+                            Liver Function Test
+                        </option>
+
+                        <option value="Kidney Function Test">
+                            Kidney Function Test
+                        </option>
+
+                        <option value="Thyroid Test">
+                            Thyroid Test
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="collection_type">
+                        🏠 Sample Collection
+                    </label>
+
+                    <select
+                        id="collection_type"
+                        name="collection_type"
+                        required
+                    >
+
+                        <option value="">
+                            Select Collection Type
+                        </option>
+
+                        <option value="Home Collection">
+                            Home Sample Collection
+                        </option>
+
+                        <option value="Hospital Collection">
+                            Hospital Collection
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="appointment_date">
+                        📅 Preferred Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="appointment_date"
+                        name="appointment_date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="appointment_time">
+                        🕐 Preferred Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="appointment_time"
+                        name="appointment_time"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="address">
+                        📍 Collection Address
+                    </label>
+
+                    <textarea
+                        id="address"
+                        name="address"
+                        rows="4"
+                        placeholder="Enter the address for sample collection"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+
+                    🩸 Book Blood Test
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

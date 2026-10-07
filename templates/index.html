@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Healthcare Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <div class="logo">
+            🏥 Smart Healthcare Portal
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li>
+                <a href="/about">About</a>
+            </li>
+
+            <li>
+                <a  href="/doctors">Doctors</a>
+            </li>
+
+            <li>
+                <a href="/contact">Contact</a>
+            </li>
+
+        </ul>
+
+        <a href="/login" class="login-btn">
+            Login
+        </a>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="left">
+
+            <h1>
+                Smart Healthcare<br>
+                Simplified ❤️
+            </h1>
+
+            <p>
+                Book appointments, maintain your medical history,
+                access lab reports, and experience smarter healthcare
+                from one secure platform.
+            </p>
+
+            <div class="buttons">
+
+                <a href="/login" class="primary">
+                    Book Appointment
+                </a>
+
+                <a href="/learn-more" class="secondary">
+                    learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="right">
+
+            <img
+                src="https://cdn-icons-png.flaticon.com/512/387/387561.png"
+                alt="Doctor">
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <h3>
+            🏥 Smart Healthcare Portal
+        </h3>
+
+        <p>
+            One Platform for Appointments, Medical Records,
+            Lab Reports & Better Patient Care.
+        </p>
+
+        <p class="developer">
+            Developed by <strong>Mehrin Bavachkar</strong> © 2026
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medical Records</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin_medical_records.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>📋 Medical Records</h1>
+
+                <p>
+                    View patient medical history and health records
+                </p>
+
+            </div>
+
+            <a href="/admin-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Records -->
+
+        {% if records %}
+
+            <div class="records">
+
+                {% for record in records %}
+
+                    <div class="record-card">
+
+                        <div class="record-header">
+
+                            <div class="icon">
+                                📋
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    {{ record[1] }}
+                                </h2>
+
+                                <p>
+                                    Checkup Date:
+                                    <strong>{{ record[2] }}</strong>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="details">
+
+                            <div class="detail">
+
+                                <span>🩺 Blood Pressure</span>
+
+                                <strong>
+                                    {{ record[3] or 'Not recorded' }}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <span>🩸 Blood Sugar</span>
+
+                                <strong>
+                                    {{ record[4] or 'Not recorded' }}
+                                </strong>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <span>⚖️ Weight</span>
+
+                                <strong>
+                                    {{ record[5] or 'Not recorded' }}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notes">
+
+                            <h3>📝 Doctor Notes</h3>
+
+                            <p>
+                                {{ record[6] or 'No notes available.' }}
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    📋
+                </div>
+
+                <h2>
+                    No Medical Records
+                </h2>
+
+                <p>
+                    There are currently no medical records available.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f4f9ff;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.header{
+    background:white;
+    padding:25px 30px;
+    border-radius:16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom:25px;
+}
+
+.header h1{
+    color:#1e3a8a;
+    font-size:28px;
+}
+
+.header p{
+    color:#777;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:11px 20px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+.doctors{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.doctor-card{
+    background:white;
+    padding:30px 25px;
+    border-radius:16px;
+    text-align:center;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+
+    transition:0.3s;
+}
+
+.doctor-card:hover{
+    transform:translateY(-5px);
+}
+
+.doctor-icon{
+    width:75px;
+    height:75px;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:36px;
+}
+
+.doctor-card h2{
+    color:#1e3a8a;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.doctor-card p{
+    color:#64748b;
+    font-size:13px;
+}
+
+.specialization{
+    color:#2563eb !important;
+    font-weight:600;
+    margin-top:4px;
+    margin-bottom:20px;
+}
+
+.appointment-btn{
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#2563eb;
+    color:white;
+
+    padding:10px 16px;
+
+    border-radius:8px;
+
+    font-size:13px;
+}
+
+.empty{
+    background:white;
+    padding:70px 30px;
+    text-align:center;
+    border-radius:16px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+}
+
+.empty-icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.empty h2{
+    color:#1e3a8a;
+    margin-bottom:8px;
+}
+
+.empty p{
+    color:#777;
+    font-size:14px;
+}
+
+@media(max-width:800px){
+
+    .doctors{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .doctors{
+        grid-template-columns:1fr;
+    }
+
+}

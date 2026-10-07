@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#f4f9ff;
+}
+
+.container{
+    width:90%;
+    max-width:850px;
+    margin:auto;
+    padding:45px 0;
+}
+
+/* Header */
+
+.header{
+    background:white;
+    padding:25px 30px;
+    border-radius:16px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    margin-bottom:25px;
+}
+
+.header h1{
+    color:#1e3a8a;
+    font-size:28px;
+    margin-bottom:6px;
+}
+
+.header p{
+    color:#666;
+}
+
+.back-btn{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+
+    padding:11px 22px;
+    border-radius:8px;
+
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#1d4ed8;
+}
+
+
+/* Form Box */
+
+.form-box{
+    background:white;
+    padding:35px;
+
+    border-radius:16px;
+
+    box-shadow:0 7px 22px rgba(0,0,0,0.07);
+}
+
+
+/* Form */
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+
+    color:#1e3a8a;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+
+    padding:13px 15px;
+
+    border:1px solid #d7deea;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:14px;
+
+    background:white;
+
+    transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,0.08);
+}
+
+.form-group textarea{
+    resize:vertical;
+}
+
+
+/* Submit Button */
+
+.submit-btn{
+    width:100%;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    background:#1d4ed8;
+}
+
+
+/* Responsive */
+
+@media(max-width:650px){
+
+    .header{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+    }
+
+    .form-box{
+        padding:25px 20px;
+    }
+
+}

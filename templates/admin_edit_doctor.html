@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Doctor</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin_edit_doctor.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div>
+
+                <h1>✏️ Edit Doctor</h1>
+
+                <p>
+                    Update doctor information
+                </p>
+
+            </div>
+
+            <a href="/admin-doctors" class="back-btn">
+                ← Doctors
+            </a>
+
+        </div>
+
+
+        <div class="form-box">
+
+            <form
+                action="/admin-edit-doctor/{{ doctor[0] }}"
+                method="POST"
+            >
+
+                <!-- Doctor Name -->
+
+                <div class="form-group">
+
+                    <label for="full_name">
+                        👨‍⚕️ Doctor Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="full_name"
+                        name="full_name"
+                        value="{{ doctor[1] }}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        📧 Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value="{{ doctor[2] }}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Mobile -->
+
+                <div class="form-group">
+
+                    <label for="mobile">
+                        📱 Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        value="{{ doctor[3] }}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Specialization -->
+
+                <div class="form-group">
+
+                    <label for="specialization">
+                        🩺 Specialization
+                    </label>
+
+                    <input
+                        type="text"
+                        id="specialization"
+                        name="specialization"
+                        value="{{ doctor[4] }}"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        🔒 Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter new password"
+                    >
+
+                    <small>
+                        Leave blank if you don't want to change the password.
+                    </small>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="form-actions">
+
+                    <a href="/admin-doctors" class="cancel-btn">
+                        Cancel
+                    </a>
+
+                    <button type="submit" class="save-btn">
+                        💾 Update Doctor
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

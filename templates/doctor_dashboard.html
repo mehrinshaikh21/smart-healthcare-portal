@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doctor Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/doctor_dashboard.css') }}">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <div class="header">
+
+            <div>
+
+                <h1>👨‍⚕️ Doctor Dashboard</h1>
+
+                <p>
+                    Welcome, {{ doctor_name }}
+                </p>
+
+            </div>
+
+            <a href="/logout" class="logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+
+        <div class="cards">
+
+            <!-- Today's Appointments -->
+
+            <div class="card">
+
+                <div class="icon">📅</div>
+
+                <h2>Today's Appointments</h2>
+
+                <p>
+                    View and manage your scheduled appointments.
+                </p>
+
+                <a href="/doctor-appointments" class="dashboard-btn">
+                    View Appointments
+                </a>
+
+            </div>
+
+
+            <!-- My Patients -->
+
+            <div class="card">
+
+                <div class="icon">👥</div>
+
+                <h2>My Patients</h2>
+
+                <p>
+                    View patients assigned to you.
+                </p>
+
+                <a href="/doctor-patients" class="dashboard-btn">
+                    View Patients
+                </a>
+
+            </div>
+
+
+            <!-- Medical History -->
+
+            <div class="card">
+
+                <div class="icon">📋</div>
+
+                <h2>Medical History</h2>
+
+                <p>
+                    View patient medical history and previous records.
+                </p>
+
+                <a href="/doctor-patients" class="dashboard-btn">
+                    View History
+                </a>
+
+            </div>
+
+
+            <!-- Blood Test Requests -->
+
+            <div class="card">
+
+                <div class="icon">🩸</div>
+
+                <h2>Blood Test Requests</h2>
+
+                <p>
+                    Manage blood test and home sample collection requests.
+                </p>
+
+                <a href="/doctor-blood-tests" class="dashboard-btn">
+                    View Requests
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Patients</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/doctor_patients.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>👥 My Patients</h1>
+
+                <p>View patients registered in the healthcare portal.</p>
+
+            </div>
+
+            <a href="/doctor-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Patient List -->
+
+        {% if patients %}
+
+            <div class="patients">
+
+                {% for patient in patients %}
+
+                    <div class="patient-card">
+
+                        <div class="patient-icon">
+                            👤
+                        </div>
+
+                        <div class="patient-info">
+
+                            <h2>{{ patient[1] }}</h2>
+
+                            <p>
+                                📧 {{ patient[2] }}
+                            </p>
+
+                            <p>
+                                📱 {{ patient[3] }}
+                            </p>
+
+                            <p>
+                                🎂 {{ patient[4] }}
+                            </p>
+
+                            <p>
+                                ⚧ {{ patient[5] }}
+                            </p>
+
+                        </div>
+
+                       <a href="/patient-medical-history/{{ patient[0] }}"
+                          class="history-btn">
+
+                          Medical History
+
+                        </a>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="no-patients">
+
+                <div class="icon">
+                    👥
+                </div>
+
+                <h2>No Patients Found</h2>
+
+                <p>
+                    There are currently no registered patients.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Test Requests</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/doctor_blood_tests.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>🩸 Blood Test Requests</h1>
+
+                <p>
+                    View and manage patient blood test requests.
+                </p>
+
+            </div>
+
+            <a href="/doctor-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Requests -->
+
+        {% if requests %}
+
+            <div class="requests-container">
+
+                {% for request in requests %}
+
+                    <div class="request-card">
+
+                        <div class="request-header">
+
+                            <div>
+
+                                <h2>
+                                    🧪 {{ request[2] }}
+                                </h2>
+
+                                <p class="patient-name">
+                                    👤 {{ request[1] }}
+                                </p>
+
+                            </div>
+
+                            <span class="status">
+                                {{ request[7] }}
+                            </span>
+
+                        </div>
+
+
+                        <div class="request-details">
+
+                            <div class="detail">
+
+                                <strong>🏠 Collection</strong>
+
+                                <span>
+                                    {{ request[3] }}
+                                </span>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <strong>📅 Date</strong>
+
+                                <span>
+                                    {{ request[4] }}
+                                </span>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <strong>🕐 Time</strong>
+
+                                <span>
+                                    {{ request[5] }}
+                                </span>
+
+                            </div>
+
+
+                            <div class="detail">
+
+                                <strong>📍 Address</strong>
+
+                                <span>
+                                    {{ request[6] }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="request-actions">
+
+                            <a href="/accept-blood-test/{{ request[0] }}">
+                                <button type="button">
+                                    Accept Request
+                                </button>
+                            </a>
+
+
+                            <a href="/complete-blood-test/{{ request[0] }}">
+                                <button type="button">
+                                    Mark Completed
+                                </button>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-box">
+
+                <div class="empty-icon">
+                    🩸
+                </div>
+
+                <h2>No Blood Test Requests</h2>
+
+                <p>
+                    There are currently no blood test requests.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

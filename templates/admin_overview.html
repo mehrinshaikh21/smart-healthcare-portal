@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>System Overview</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin_overview.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>📊 System Overview</h1>
+
+                <p>
+                    Overall statistics of Smart Healthcare Portal
+                </p>
+
+            </div>
+
+            <a href="/admin-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <div class="stats">
+
+
+            <!-- Patients -->
+
+            <div class="stat-card">
+
+                <div class="icon">
+                    👥
+                </div>
+
+                <div>
+
+                    <h2>{{ total_patients }}</h2>
+
+                    <p>Total Patients</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Doctors -->
+
+            <div class="stat-card">
+
+                <div class="icon">
+                    👨‍⚕️
+                </div>
+
+                <div>
+
+                    <h2>{{ total_doctors }}</h2>
+
+                    <p>Total Doctors</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Appointments -->
+
+            <div class="stat-card">
+
+                <div class="icon">
+                    📅
+                </div>
+
+                <div>
+
+                    <h2>{{ total_appointments }}</h2>
+
+                    <p>Total Appointments</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Blood Tests -->
+
+            <div class="stat-card">
+
+                <div class="icon">
+                    🩸
+                </div>
+
+                <div>
+
+                    <h2>{{ total_blood_tests }}</h2>
+
+                    <p>Blood Test Requests</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Medical Records -->
+
+            <div class="stat-card">
+
+                <div class="icon">
+                    📋
+                </div>
+
+                <div>
+
+                    <h2>{{ total_records }}</h2>
+
+                    <p>Medical Records</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Completed Blood Test Reports -->
+
+            <div class="stat-card">
+
+                <div class="icon">
+                    🧪
+                </div>
+
+                <div>
+
+                    <h2>{{ completed_reports }}</h2>
+
+                    <p>Completed Blood Test Reports</p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

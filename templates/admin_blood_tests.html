@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Test Requests</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin_blood_tests.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>🩸 Blood Test Requests</h1>
+
+                <p>
+                    Monitor blood test and sample collection requests
+                </p>
+
+            </div>
+
+            <a href="/admin-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Requests -->
+
+        {% if requests %}
+
+            <div class="requests">
+
+                {% for item in requests %}
+
+                    <div class="request-card">
+
+                        <div class="request-top">
+
+                            <div class="icon">
+                                🩸
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    {{ item[2] }}
+                                </h2>
+
+                                <p>
+                                    Patient:
+                                    <strong>
+                                        {{ item[1] or 'Unknown Patient' }}
+                                    </strong>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <p>
+                            🏠 <strong>Collection:</strong>
+                            {{ item[3] }}
+                        </p>
+
+                        <p>
+                            📅 <strong>Date:</strong>
+                            {{ item[4] }}
+                        </p>
+
+                        <p>
+                            🕐 <strong>Time:</strong>
+                            {{ item[5] }}
+                        </p>
+
+                        <p>
+                            📍 <strong>Address:</strong>
+                            {{ item[6] }}
+                        </p>
+
+                        <span class="status">
+                            Pending
+                        </span>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    🩸
+                </div>
+
+                <h2>
+                    No Blood Test Requests
+                </h2>
+
+                <p>
+                    There are currently no blood test requests.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

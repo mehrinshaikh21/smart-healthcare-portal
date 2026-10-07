@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Appointments</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin_appointments.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div>
+
+                <h1>📅 Manage Appointments</h1>
+
+                <p>
+                    View all appointments booked through the portal
+                </p>
+
+            </div>
+
+            <a href="/admin-dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+        </div>
+
+
+        <!-- Appointments -->
+
+        {% if appointments %}
+
+            <div class="appointments">
+
+                {% for appointment in appointments %}
+
+                    <div class="appointment-card">
+
+                        <div class="appointment-icon">
+                            📅
+                        </div>
+
+                        <div class="appointment-info">
+
+                            <h2>
+                                Appointment #{{ appointment[0] }}
+                            </h2>
+
+                            <p>
+                                📋 Patient ID:
+                                <strong>{{ appointment[1] }}</strong>
+                            </p>
+
+                            <p>
+                                👨‍⚕️ Doctor ID:
+                                <strong>{{ appointment[2] }}</strong>
+                            </p>
+
+                            <p>
+                                📅 Date:
+                                <strong>{{ appointment[3] }}</strong>
+                            </p>
+
+                            <p>
+                                ⏰ Time:
+                                <strong>{{ appointment[4] }}</strong>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="no-appointments">
+
+                <div class="icon">
+                    📅
+                </div>
+
+                <h2>No Appointments Found</h2>
+
+                <p>
+                    There are currently no appointments booked.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

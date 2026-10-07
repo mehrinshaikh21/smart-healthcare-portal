@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Test Report</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/blood_test_report.css') }}">
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Top Buttons -->
+
+    <div class="actions">
+
+        <a href="/my-blood-test-reports" class="back-btn">
+            ← Back
+        </a>
+
+        <button onclick="window.print()" class="print-btn">
+            🖨️ Print Report
+        </button>
+
+    </div>
+
+
+    <!-- Report -->
+
+    <div class="report">
+
+
+        <!-- Laboratory Header -->
+
+        <div class="lab-header">
+
+            <div class="lab-logo">
+                🏥
+            </div>
+
+            <div>
+
+                <h1>
+                    HEALTHCARE CLINICAL LABORATORY
+                </h1>
+
+                <p>
+                    Laboratory Diagnostic Services
+                </p>
+
+                <p>
+                    🧪 Trusted • Accurate • Professional
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <!-- Report Title -->
+
+        <div class="report-title">
+
+            <h2>
+                BLOOD TEST REPORT
+            </h2>
+
+            <span class="status">
+                {{ report[16] }}
+            </span>
+
+        </div>
+
+
+        <!-- Patient Information -->
+
+        <div class="section">
+
+            <h3>👤 Patient Information</h3>
+
+            <div class="grid">
+
+                <p>
+                    <strong>Patient Name:</strong>
+                    {{ report[1] }}
+                </p>
+
+                <p>
+                    <strong>Gender:</strong>
+                    {{ report[2] }}
+                </p>
+
+                <p>
+                    <strong>Date of Birth:</strong>
+                    {{ report[3] }}
+                </p>
+
+                <p>
+                    <strong>Mobile:</strong>
+                    {{ report[4] }}
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Test Information -->
+
+        <div class="section">
+
+            <h3>🧪 Test Information</h3>
+
+            <div class="grid">
+
+                <p>
+                    <strong>Test Name:</strong>
+                    {{ report[5] }}
+                </p>
+
+                <p>
+                    <strong>Collection Type:</strong>
+                    {{ report[6] }}
+                </p>
+
+                <p>
+                    <strong>Test Date:</strong>
+                    {{ report[7] }}
+                </p>
+
+                <p>
+                    <strong>Test Time:</strong>
+                    {{ report[8] }}
+                </p>
+
+            </div>
+
+            <p class="address">
+
+                <strong>📍 Collection Address:</strong>
+                {{ report[9] }}
+
+            </p>
+
+        </div>
+
+
+        <!-- Result -->
+
+        <div class="section">
+
+            <h3>🩸 Test Result</h3>
+
+            <div class="result-box">
+                {{ report[10] }}
+            </div>
+
+        </div>
+
+
+        <!-- Reference Range -->
+
+        <div class="section">
+
+            <h3>📊 Reference / Normal Range</h3>
+
+            <div class="range-box">
+                {{ report[11] }}
+            </div>
+
+        </div>
+
+
+        <!-- Impression -->
+
+        <div class="section">
+
+            <h3>📝 Impression / Remarks</h3>
+
+            <div class="remarks-box">
+                {{ report[12] }}
+            </div>
+
+        </div>
+
+
+        <!-- Laboratory Details -->
+
+        <div class="lab-details">
+
+            <h3>👨‍🔬 Laboratory Details</h3>
+
+            <p>
+                <strong>Laboratory Technician:</strong>
+                {{ report[13] }}
+            </p>
+
+            <p>
+                <strong>Qualification:</strong>
+                {{ report[14] }}
+            </p>
+
+            <p>
+                <strong>Laboratory:</strong>
+                {{ report[15] }}
+            </p>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <div class="footer">
+
+            <p>
+                This report has been generated through the
+                Smart Healthcare Portal.
+            </p>
+
+            <p>
+                © Healthcare Clinical Laboratory
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
