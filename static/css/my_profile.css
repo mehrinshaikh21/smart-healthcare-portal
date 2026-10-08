@@ -14,10 +14,12 @@ body{
     justify-content:center;
     align-items:center;
     min-height:100vh;
+    padding:30px;
 }
 
 .profile-box{
     width:700px;
+    max-width:100%;
     background:white;
     padding:40px;
     border-radius:15px;
@@ -37,6 +39,8 @@ body{
 .row{
     display:flex;
     justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
     padding:15px 0;
     border-bottom:1px solid #ddd;
 }
@@ -48,6 +52,8 @@ body{
 
 .row span{
     color:#555;
+    text-align:right;
+    word-break:break-word;
 }
 
 .buttons{
@@ -68,4 +74,84 @@ button{
 
 button:hover{
     background:#1d4ed8;
+}
+
+
+/* ========================= */
+/* MOBILE RESPONSIVE DESIGN */
+/* ========================= */
+
+@media (max-width:600px){
+
+    .container{
+        padding:20px 15px;
+        align-items:flex-start;
+    }
+
+    .profile-box{
+        width:100%;
+        padding:25px 20px;
+        margin-top:20px;
+    }
+
+    .profile-box h1{
+        font-size:28px;
+    }
+
+    .profile-box p{
+        font-size:14px;
+        line-height:1.6;
+        margin-bottom:20px;
+    }
+
+    .row{
+        flex-direction:column;
+        gap:5px;
+        padding:13px 0;
+    }
+
+    .row label{
+        font-size:14px;
+    }
+
+    .row span{
+        text-align:left;
+        font-size:14px;
+        width:100%;
+    }
+
+    .buttons{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    button{
+        width:100%;
+        font-size:15px;
+    }
+}
+
+
+/* ========================= */
+/* SMALL MOBILE DEVICES */
+/* ========================= */
+
+@media (max-width:400px){
+
+    .profile-box{
+        padding:22px 15px;
+    }
+
+    .profile-box h1{
+        font-size:25px;
+    }
+
+    .profile-box p{
+        font-size:13px;
+    }
+
+    .row label,
+    .row span{
+        font-size:13px;
+    }
 }
