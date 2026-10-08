@@ -92,3 +92,84 @@ button:hover{
     text-decoration:none;
     font-weight:600;
 }
+
+
+/* ========================= */
+/* MOBILE RESPONSIVE DESIGN */
+/* ========================= */
+
+@media (max-width: 600px){
+
+    body{
+        padding:20px 15px;
+        align-items:flex-start;
+    }
+
+    .register-box{
+        width:100%;
+        max-width:500px;
+        padding:25px 20px;
+        margin:20px 0;
+    }
+
+    .register-box h1{
+        font-size:28px;
+    }
+
+    .register-box p{
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    input,
+    textarea{
+        font-size:14px;
+        padding:11px;
+    }
+
+    .gender{
+        font-size:14px;
+    }
+
+    .gender input{
+        margin-left:5px;
+    }
+
+    button{
+        padding:13px;
+        font-size:15px;
+    }
+
+    .login-link{
+        font-size:14px;
+    }
+}
+
+
+/* ========================= */
+/* SMALL MOBILE DEVICES */
+/* ========================= */
+
+@media (max-width: 400px){
+
+    body{
+        padding:15px 10px;
+    }
+
+    .register-box{
+        padding:22px 15px;
+    }
+
+    .register-box h1{
+        font-size:25px;
+    }
+
+    .register-box p{
+        font-size:13px;
+    }
+
+    input,
+    textarea{
+        font-size:13px;
+    }
+}
